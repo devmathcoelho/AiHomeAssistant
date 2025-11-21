@@ -1,10 +1,16 @@
-from handlers.request import SpeechToText, TextToSpeech
+from handlers.TTS_requests import SpeechToText, TextToSpeech
+from handlers.MicRecorder import RecordAudio
 
 def main ():
     print("Listening...")
-    user_said = SpeechToText("quepena")
-    TextToSpeech("Olá! Como posso ajudar?")
-    
+
+    inputResponse = input("Press 1 to record the audio...")
+
+    if inputResponse == "1":
+        RecordAudio()
+        user_said = SpeechToText("record")
+        TextToSpeech(user_said)
+        
     if user_said:
         print(f"User said: {user_said}")
     else:
