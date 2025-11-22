@@ -13,7 +13,7 @@ def RecordAudio():
     parent_dir = os.path.dirname(script_dir)
     MP3_FILENAME = os.path.join(parent_dir, "responses", "record.mp3") # Output MP3 file path
 
-    print("⚡️ Recording in 3... 2... 1... GO!")
+    print("⚡️ Your voice will be recorded for 5 seconds!")
 
     recording = sd.rec(int(SECONDS * FS), samplerate=FS, channels=1, dtype='int16')
     sd.wait() # Wait until recording is finished
